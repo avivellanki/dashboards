@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  self.get("/forex", {:controller => "currency", :action => "first_currency"})
+  self.get("/forex/:from_currency", {:controller => "currency", :action => "second_currency"})
+  self.get("/forex/:from_currency/:to_currency", {:controller => "currency", :action => "third_currency"})
+  # self.get("/covid", {:controller => "application", :action => "add"})
+  # self.get("/covid/AK", {:controller => "application", :action => "wizard_add"})
 end
